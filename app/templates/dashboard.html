@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <header class="dashboard-header">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <span class="brand-name">AuthSpace</span>
+        </div>
+
+        <form action="/logout" method="POST">
+            <button type="submit" class="logout-button">
+                Logout
+            </button>
+        </form>
+
+    </header>
+
+    <main class="dashboard-card">
+
+        <p class="welcome-label">Account dashboard</p>
+
+        <h1 class="dashboard-title">
+            Welcome, {{ user.username }}!
+        </h1>
+
+        <p class="dashboard-subtitle">
+            You've successfully logged in. Here are your account details.
+        </p>
+
+        <div class="profile-details">
+
+            <div class="profile-item">
+                <span>Username</span>
+                <strong>{{ user.username }}</strong>
+            </div>
+
+            <div class="profile-item">
+                <span>Email address</span>
+                <strong>{{ user.email }}</strong>
+            </div>
+
+        </div>
+
+        <p class="welcome-label">
+            <span style="color: #28745b;">●</span>
+            Your account is active
+        </p>
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <div class="auth-card">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <span class="brand-name">AuthSpace</span>
+        </div>
+
+        <h1 class="auth-heading">Welcome back!</h1>
+
+        <p class="auth-description">
+            Sign in to your account to continue.
+        </p>
+        {% if request.query_params.get('registered') == 'success' %}
+    <div class="success-message">
+        Registration successful! Please log in.
+    </div>
+{% endif %}
+
+        <form action="/login" method="POST">
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="primary-button">
+                Sign In
+            </button>
+
+        </form>
+
+        <p class="auth-footer">
+            Don't have an account?
+            <a href="/register">Create account</a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
